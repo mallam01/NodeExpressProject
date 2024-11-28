@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express()
-const port = 3000
+const port = procrdd.env.PORT || 3000
 
 // npm packages require to MongoDB connection
 const mongoose = require('mongoose');
@@ -54,7 +54,7 @@ app.get('/index.html', (req, res) => {
   });
 })
 
-// GET Endpoint for Index Page (index.html)
+// GET Endpoint for update user --> editUser.ejs
 app.get('/update/:id', (req, res) => {
   UserScehema.findById(req.params.id)
   .then((result) => {
