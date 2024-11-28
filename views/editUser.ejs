@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+
+    <form action="/edit/<%= userData._id %>?_method=PUT" method="post">
+         Id: <input name="_id" value="<%= userData._id %>"/>
+         <br/>
+         username: <input name="username" value="<%= userData.username %>"/>
+        <button>Edit User</button>
+    </form>
+</body>
+</html>

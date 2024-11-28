@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> CRUD Operations using Mongoos & Express </h1>
+
+    <!-- POST form -->
+    <form action="/" method="post">
+        username <input name="username" type="text" />
+        <button> Send do database </button>
+    </form>
+
+    <!-- GET & Display all users data -->
+    <table>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <tbody>
+
+            <% userList.forEach(item=> { %>
+                <tr>
+                    <td><%= item._id %></td>
+                    <td><%= item.username %></td>
+                    <td>
+                        <!--DELETE User form -->
+                        
+                        <form action="/delete/<%= item._id %>?_method=DELETE" method="post">
+                           <button> x </button>
+                        </form>
+                    </td>
+                    <td>
+                        <!--Update User form -->
+                        
+                        <form action="/update/<%= item._id %>" method="get">
+                           <button> ... </button>
+                        </form>
+                    </td>
+
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
